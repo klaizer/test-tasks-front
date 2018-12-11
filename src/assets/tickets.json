@@ -21,7 +21,7 @@
     "arrival_date": "12.05.18",
     "arrival_time": "23:50",
     "carrier": "S7",
-    "stops": 15,
+    "stops": 5,
     "price": 13100
   }, {
     "origin": "VVO",
