@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {catchError, map, tap} from 'rxjs/operators';
 
-import {Ticket} from '../shared/ticket.models';
+import {Ticket} from '../shared/models/ticket.models';
 
 @Injectable({
   providedIn: 'root'

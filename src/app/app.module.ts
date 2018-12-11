@@ -8,6 +8,7 @@ import { NotFoundPageComponent } from './views/not-found-page/not-found-page.com
 import { HttpClientModule } from '@angular/common/http';
 import { StopsFilterComponent } from './search-page/stops-filter/stops-filter.component';
 import { SharedModule } from './shared/shared.module';
+import { CurrencyFilterComponent } from './search-page/currency-filter/currency-filter.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { SharedModule } from './shared/shared.module';
     SearchPageComponent,
     NotFoundPageComponent,
     StopsFilterComponent,
+    CurrencyFilterComponent,
   ],
   imports: [
     BrowserModule,

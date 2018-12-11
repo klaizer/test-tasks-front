@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchService} from './search.service';
-import {Ticket} from '../shared/ticket.models';
+
+import {Ticket} from '../shared/models/ticket.models';
+import {Currency} from '../shared/models/currency.models';
 
 @Component({
   selector: 'app-search-page',
@@ -13,6 +15,8 @@ export class SearchPageComponent implements OnInit {
   ticketsToDisplay: Ticket[];
 
   filterParams: number[] = [];
+
+  currency: Currency;
 
   constructor(private searchService: SearchService) {}
 
@@ -37,4 +41,8 @@ export class SearchPageComponent implements OnInit {
     }
   }
 
+  changeCurrency(currency: Currency) {
+    this.currency = currency;
+    console.log(currency);
+  }
 }
