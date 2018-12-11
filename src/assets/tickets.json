@@ -4,7 +4,7 @@
     "origin_name": "Владивосток",
     "destination": "TLV",
     "destination_name": "Тель-Авив",
-    "departure_date": "12.05.18",
+    "departure_date": "2018-11-26",
     "departure_time": "16:20",
     "arrival_date": "12.05.18",
     "arrival_time": "22:10",
@@ -21,7 +21,7 @@
     "arrival_date": "12.05.18",
     "arrival_time": "23:50",
     "carrier": "S7",
-    "stops": 1,
+    "stops": 15,
     "price": 13100
   }, {
     "origin": "VVO",

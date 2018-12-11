@@ -3,7 +3,8 @@
   <div class="price-block">
     <img src="./../../../assets/company-logo.png" alt="logo">
     <button class="price-btn" type="button">
-      Купить <br>
+      Купить
+      <br>
       за {{ ticket.price * currency?.rate | number:"1.0-1" }} {{currency?.sign}}
     </button>
   </div>
@@ -12,19 +13,32 @@
 
     <div class="time-row">
       <div class="time">{{ticket.departure_time}}</div>
-      <div class="time-divider">{{ticket.stops}} ПЕРЕСАДКИ</div>
+      <div class="stops-divider">{{wordsDeclension(ticket.stops)}}</div>
       <div  class="time">{{ticket.arrival_time}}</div>
     </div>
 
     <div class="date-row">
+
       <div>
-        <span class="code-city">{{ticket.origin}}, {{ticket.origin_name}}</span><br>
-        <span class="date">{{ticket.departure_date}}</span>
+        <span class="code-city">
+          {{ticket.origin}}, {{ticket.origin_name}}
+        </span>
+        <br>
+        <span class="date">
+          {{transformDateToUTC(ticket.departure_date) | date:'d MMM yyyy, EEE'}}
+        </span>
       </div>
+
       <div>
-        <span class="code-city">{{ticket.destination}}, {{ticket.destination_name}}</span><br>
-        <span class="date">{{ticket.arrival_date}}</span>
+        <span class="code-city">
+          {{ticket.destination}}, {{ticket.destination_name}}
+        </span>
+        <br>
+        <span class="date">
+          {{transformDateToUTC(ticket.arrival_date) | date:'d MMM yyyy, EEE'}}
+        </span>
       </div>
+
     </div>
   </div>
 
