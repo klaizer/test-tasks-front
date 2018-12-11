@@ -1,0 +1,16 @@
+<div class="stops-title">КОЛИЧЕСТВО ПЕРЕСАДОК</div>
+
+<ul>
+
+  <li (click)="selectAll()">
+    <app-checkbox [value]="allSelect"></app-checkbox>
+    <label>Все</label>
+  </li>
+
+  <li *ngFor="let filter of filters" (click)="setSelect(filter)">
+    <app-checkbox [value]="filter.select"></app-checkbox>
+    <label>{{filter.label}}</label>
+    <a class="only-btn" (click)="selectOnly($event, filter)">ТОЛЬКО</a>
+  </li>
+
+</ul>

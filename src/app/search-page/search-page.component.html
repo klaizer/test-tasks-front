@@ -1,3 +1,10 @@
-<div *ngFor="let ticket of tickets">
-  Ticket price: {{ticket.price}}
+
+<div class="filters-wrapper">
+  <app-stops-filter (filterChange)="filterChange($event)"></app-stops-filter>
+</div>
+
+<div class="list">
+  <div *ngFor="let ticket of ticketsToDisplay">
+    <div>Ticket: price - {{ticket.price}} stops - {{ticket.stops}}</div>
+  </div>
 </div>

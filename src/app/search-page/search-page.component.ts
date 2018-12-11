@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchService} from './search.service';
+import {Ticket} from '../shared/ticket.models';
 
 @Component({
   selector: 'app-search-page',
@@ -8,13 +9,32 @@ import {SearchService} from './search.service';
 })
 export class SearchPageComponent implements OnInit {
 
-  tickets: any;
+  tickets: Ticket[];
+  ticketsToDisplay: Ticket[];
+
+  filterParams: number[] = [];
 
   constructor(private searchService: SearchService) {}
 
   ngOnInit() {
-    this.searchService.fetch().subscribe(data => {
+    this.searchService.fetch().subscribe((data: Ticket[]) => {
       this.tickets = data;
+      this.filterData();
     });
   }
+
+  filterChange(event: number[]) {
+    console.log(event);
+    this.filterParams = [...event];
+    this.filterData();
+  }
+
+  filterData() {
+    if (this.filterParams.length) {
+      this.ticketsToDisplay = this.tickets.filter((ticket: Ticket) => this.filterParams.includes(ticket.stops));
+    } else {
+      this.ticketsToDisplay = [...this.tickets];
+    }
+  }
+
 }

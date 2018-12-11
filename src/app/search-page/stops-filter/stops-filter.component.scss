@@ -1,0 +1,49 @@
+:host {
+  font-size: 0.8rem;
+}
+
+.stops-title {
+  padding: 0.5rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    padding: 0.5rem;
+    line-height: 1.4rem;
+    label {
+      flex-grow: 1;
+      padding: 0 1rem;
+      cursor: pointer;
+    }
+    .only-btn {
+      color: #2196f3;
+      font-size: 0.7rem;
+      visibility: hidden;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  li:hover {
+    cursor: pointer;
+    background-color: #f1fcff;
+    .only-btn {
+      visibility: visible;
+    }
+    app-checkbox {
+      border: 1px solid #2196f3;
+      background: #f2fcff;
+    }
+  }
+}
+
+
+
+
+
