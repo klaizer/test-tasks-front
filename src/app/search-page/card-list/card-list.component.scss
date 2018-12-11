@@ -16,7 +16,7 @@
   justify-content: space-around;
   width: 30%;
   padding: 1.5rem ;
-  border-right: 1px solid #ECEFF1;
+  border-right: 1px solid #d7dadb;
 
   img {
     margin: 0 auto;
@@ -25,14 +25,13 @@
   .price-btn {
     margin-top: 1rem;
     padding: 0.5rem;
-    font-size: 18px;
+    font-size: 1rem;
     color: #ffffff;
     cursor: pointer;
     border: none;
     background: #ff6d00;
     box-shadow: 0 1px 5px 0 #d64d08;
     outline: 0;
-
     &:active {
       background: #FF8124;
     }
@@ -41,5 +40,54 @@
 
 .info-block {
   width: 70%;
+  margin: 1.5rem 5%;
+}
 
+.time-row {
+  display: flex;
+  justify-content: space-between;
+
+  .time {
+    font-size: 2rem;
+    color: #4a4a4a;
+  }
+  .time-divider {
+    flex-grow: 1;
+    position: relative;
+    margin: 0 5%;
+    padding-top: 8px;
+    text-align: center;
+    font-size: 0.5rem;
+    color: #8B9497;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 0;
+      right: 16px;
+      border-top: 1px solid #d7dadb;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 14px;
+      width: 14px;
+      height: 14px;
+      background: url("./../../../assets/plane-ico.png") no-repeat;
+    }
+  }
+
+}
+
+.date-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  .date {
+    color: #8B9497;
+  }
+  .code-city {
+    color: #4A4A4A;
+  }
 }
