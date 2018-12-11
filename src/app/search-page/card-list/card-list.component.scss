@@ -1,9 +1,10 @@
 :host {
-  margin: 0 1rem;
+  margin-left: 1rem;
 }
+
 .card {
   display: flex;
-  width: 560px;
+  min-width: 530px;
   margin-bottom: 0.5rem;
   background-color: #ffffff;
   border-radius: 0.5rem;
@@ -51,6 +52,7 @@
     font-size: 2rem;
     color: #4a4a4a;
   }
+
   .stops-divider {
     flex-grow: 1;
     position: relative;
@@ -91,3 +93,57 @@
     color: #4A4A4A;
   }
 }
+
+@media all and (max-width: 768px) {
+  :host {
+    margin: 0;
+  }
+  .card {
+    flex-direction: column-reverse;
+    min-width: 400px;
+  }
+
+  .price-block {
+    flex-direction: row;
+    width: auto;
+    padding: 1rem 0.2rem;
+    border-right: none;
+    border-top: 1px solid #d7dadb;
+    img {
+      margin: 0;
+    }
+    .price-btn {
+      align-self: center;
+      margin-top: 0;
+    }
+    br {
+      display: none;
+    }
+  }
+
+  .info-block {
+    width: auto;
+    .time-row .time {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media all and (max-width: 420px) {
+  .card {
+    min-width: auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

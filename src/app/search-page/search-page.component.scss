@@ -2,11 +2,24 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .filters-wrapper {
-  min-width: 250px;
   background-color: #ffffff;
   box-shadow: 4px 6px 5px 3px rgba(100, 100, 100, .5);
+}
+
+
+@media all and (max-width: 768px) {
+  :host {
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+  }
+  .filters-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+  }
 }
