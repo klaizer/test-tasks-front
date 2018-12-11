@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StopsFilterComponent } from './search-page/stops-filter/stops-filter.component';
 import { SharedModule } from './shared/shared.module';
 import { CurrencyFilterComponent } from './search-page/currency-filter/currency-filter.component';
+import { CardListComponent } from './search-page/card-list/card-list.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CurrencyFilterComponent } from './search-page/currency-filter/currency-
     NotFoundPageComponent,
     StopsFilterComponent,
     CurrencyFilterComponent,
+    CardListComponent
   ],
   imports: [
     BrowserModule,

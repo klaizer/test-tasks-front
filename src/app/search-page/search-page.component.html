@@ -1,14 +1,8 @@
-
 <div class="filters-wrapper">
+
   <app-currency-filter (changeCurrency)="changeCurrency($event)"></app-currency-filter>
   <app-stops-filter (filterChange)="filterChange($event)"></app-stops-filter>
+
 </div>
 
-<div class="list">
-  <div *ngFor="let ticket of ticketsToDisplay">
-    <div>Ticket:
-      <span>price - {{ (currency?.rate) ? (ticket.price * currency.rate | number:"1.0-1" ) : ticket.price }} {{currency?.sign}}</span> |
-      <span>stops - {{ticket.stops}}</span>
-    </div>
-  </div>
-</div>
+<app-card-list [tickets]="ticketsToDisplay" [currency]="currency"></app-card-list>
