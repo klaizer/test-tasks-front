@@ -1,9 +1,12 @@
 <div class="title">ВАЛЮТА</div>
 
 <div class="btn-group">
+
   <button
     type="button"
     *ngFor="let currency of currencies"
-    (click)="change(currency)"
-    [ngClass]="{'select': currency.select}">{{currency.key}}</button>
+    [ngClass]="{'select': currency.select, 'disable': !currency.rate}"
+    [disabled]="!currency.rate"
+    (click)="change(currency)">{{currency.key}}</button>
+
 </div>

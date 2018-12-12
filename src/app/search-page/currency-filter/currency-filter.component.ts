@@ -1,6 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {delay} from 'rxjs/operators';
 
 import {Currency} from '../../shared/models/currency.models';
+import {CurrencyApiService} from '../../shared/currency-api.service';
 
 @Component({
   selector: 'app-currency-filter',
@@ -13,15 +15,25 @@ export class CurrencyFilterComponent implements OnInit {
 
   currencies: Currency[] = [
     { sign: '₽', key: 'RUB', rate: 1, select: true},
-    { sign: '$', key: 'USD', rate: 0.015, select: false}, // set static exchange rate
-    { sign: '€', key: 'EUR', rate: 0.013, select: false} // set static exchange rate
+    { sign: '$', key: 'USD', rate: null, select: false},
+    { sign: '€', key: 'EUR', rate: null, select: false}
   ];
 
-  constructor() {}
+  constructor(private service: CurrencyApiService) {}
 
   ngOnInit() {
     const defaultCurrency = this.currencies[0];
     this.emitCurrency(defaultCurrency);
+
+
+    this.service.getCurrencyRate()
+      .pipe(
+        delay(2000)
+      )
+      .subscribe(resp => {
+      this.currencies[1].rate = resp['RUB_USD'];
+      this.currencies[2].rate = resp['RUB_EUR'];
+    });
   }
 
   change(currency: Currency) {

@@ -43,5 +43,15 @@
     background: #2196F3;
     border-color: #2196F3;
   }
+
+  button.disable {
+    color: #D2D5D6;
+    &:hover {
+      border-color: #D2D5D6;
+      background: transparent;
+      cursor: not-allowed;
+    }
+  }
+
 }
 
