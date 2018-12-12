@@ -11,7 +11,7 @@ export class CurrencyApiService {
 
   getCurrencyRate(): Observable<any> {
     const param = 'RUB_USD,RUB_EUR';
-    return this.http.get(`http://free.currencyconverterapi.com/api/v5/convert?q=${param}&compact=ultra`);
+    return this.http.get(`https://free.currencyconverterapi.com/api/v5/convert?q=${param}&compact=ultra`);
   }
 }
 
