@@ -1,25 +1,23 @@
 :host {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
-  justify-content: center;
 }
 
 .filters-wrapper {
+  margin: 1rem 0 1rem 1rem;
   background-color: #ffffff;
-  box-shadow: 4px 6px 5px 3px rgba(100, 100, 100, .5);
+  box-shadow: 3px 3px 5px 3px rgba(100, 100, 100, .5);
 }
 
 
 @media all and (max-width: 768px) {
   :host {
     flex-direction: column;
-    align-items: center;
-    justify-content: start;
   }
   .filters-wrapper {
     display: flex;
     flex-wrap: wrap;
-    margin: 1rem;
+    width: 90vw;
+    margin: auto;
   }
 }

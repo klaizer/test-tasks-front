@@ -1,5 +1,6 @@
 :host {
   font-size: 0.8rem;
+  flex-grow: 1;
 }
 
 .stops-title {
@@ -18,7 +19,7 @@ ul {
     label {
       flex-grow: 1;
       padding: 0 1rem;
-      cursor: pointer;
+      white-space: nowrap;
     }
     .only-btn {
       color: #2196f3;
